@@ -5,3 +5,17 @@ The Stack Overflow Annual Survey is the most comprehensive data source on develo
 ## Tech Stack & Architecture
 **Data Orchestration:** Python(Pandas) for ETL.
 **Analytical Engine:** [DuckDB](https://duckdb.org/) for high-performance, in-process OLAP.
+**Backend API:** FastAPI for serving standard metrics.
+**Frontend:** Streamlit for comprehensive and interactivew data exploration.
+**Storage:** Parquet for efficient,compressed data versioning.
+## Roadmap-->
+**Phase 1: Foundation-** Initialize repo,DuckDB setup and .gitignore.
+**Phase 2: ETL & Normalization-** Map historical columns to a "Gold Standard" schema.
+**Phase 3: Analytical Layer-** Build SQL views in DuckDB for multi-year trends.
+**Phase 4: Presentation-** Deploy FastAPI and Streamlit Dashboard.
+## Repo Strucutre:
+![Repo Image](image.png)
+## Setup & Installation:
+1. Clone the repo.
+2. Place raw CSVs in 'data/raw'.
+3. 'pip install -r requirements.txt'
