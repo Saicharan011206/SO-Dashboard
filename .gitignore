@@ -211,3 +211,5 @@ __marimo__/
 data/raw/*.csv
 data/processed/*.parquet
 *.db
+data/raw/*.txt
+data/raw/*.yaml
