@@ -228,3 +228,4 @@ data/database/*
 # Python
 __pycache__/
 *.py[cod]
+!data/raw/meta.yaml

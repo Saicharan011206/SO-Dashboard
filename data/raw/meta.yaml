@@ -1,0 +1,130 @@
+# Master columns for our unified analytical layer
+gold_standard_columns:
+  - year
+  - country
+  - employment_status
+  - ed_level
+  - dev_type
+  - languages_worked_with
+  - salary_usd
+  - remote_work
+
+# Data Quality Thresholds (Phase 1: Filter out trolls and incomplete data)
+quality_settings:
+  min_completeness_pct: 0.60
+  salary_upper_limit: 2000000 
+  salary_lower_limit: 1000
+
+# Year-by-Year Mappings
+mappings:
+  2024:
+    country: "Country"
+    employment_status: "Employment"
+    ed_level: "EdLevel"
+    dev_type: "DevType"
+    languages_worked_with: "LanguageHaveWorkedWith"
+    salary_usd: "ConvertedCompYearly"
+    remote_work: "RemoteWork"
+    
+  2023:
+    country: "Country"
+    employment_status: "Employment"
+    ed_level: "EdLevel"
+    dev_type: "DevType"
+    languages_worked_with: "LanguageHaveWorkedWith"
+    salary_usd: "ConvertedCompYearly"
+    remote_work: "RemoteWork"
+
+  2022:
+    country: "Country"
+    employment_status: "Employment"
+    ed_level: "EdLevel"
+    dev_type: "DevType"
+    languages_worked_with: "LanguageHaveWorkedWith"
+    salary_usd: "ConvertedCompYearly"
+    remote_work: "RemoteWork"
+
+  2021:
+    country: "Country"
+    employment_status: "Employment"
+    ed_level: "EdLevel"
+    dev_type: "DevType"
+    languages_worked_with: "LanguageHaveWorkedWith"
+    salary_usd: "ConvertedCompYearly"
+    remote_work: "RemoteWork"
+
+  2020:
+    country: "Country"
+    employment_status: "Employment"
+    ed_level: "EdLevel"
+    dev_type: "DevType"
+    languages_worked_with: "LanguageWorkedWith"
+    salary_usd: "ConvertedComp"
+    remote_work: "OpSys" # Note: Remote work wasn't a standard 2020 column yet
+
+  2019:
+    country: "Country"
+    employment_status: "Employment"
+    ed_level: "EdLevel"
+    dev_type: "DevType"
+    languages_worked_with: "LanguageWorkedWith"
+    salary_usd: "ConvertedComp"
+
+  2018:
+    country: "Country"
+    employment_status: "Employment"
+    ed_level: "FormalEducation"
+    dev_type: "DevType"
+    languages_worked_with: "LanguageWorkedWith"
+    salary_usd: "ConvertedComp"
+
+  2017:
+    country: "Country"
+    employment_status: "EmploymentStatus"
+    ed_level: "FormalEducation"
+    dev_type: "DeveloperType"
+    languages_worked_with: "HaveWorkedLanguage"
+    salary_usd: "Salary"
+    remote_work: "HomeRemote"
+
+  2016:
+    country: "country"
+    employment_status: "employment_status"
+    ed_level: "education"
+    dev_type: "occupation"
+    languages_worked_with: "tech_do"
+    salary_usd: "salary_mid"
+    remote_work: "remote"
+
+  2015:
+    country: "country"
+    employment_status: "employment Status"
+    ed_level: "education"
+    dev_type: "occupation"
+    languages_worked_with: "current lang & tech"
+    salary_usd: "compensation"
+    remote_work: "remote status"
+
+  2014:
+    country: "What Country do you live in?"
+    employment_status: "Which of the following best describes your occupation?"
+    languages_worked_with: "Which of the following languages or technologies have you used significantly in the past year?"
+    salary_usd: "Including bonus, what is your annual compensation in USD?"
+
+  2013:
+    country: "What Country do you live in?"
+    employment_status: "Which of the following best describes your occupation?"
+    languages_worked_with: "Which of the following languages or technologies have you used significantly in the past year?"
+    salary_usd: "Including bonus, what is your annual compensation in USD?"
+
+  2012:
+    country: "What Country do you live in?"
+    employment_status: "Which of the following best describes your occupation?"
+    languages_worked_with: "Which languages are you proficient in?"
+    salary_usd: "Including bonus, what is your annual compensation in USD?"
+
+  2011:
+    country: "What Country do you live in?"
+    employment_status: "Which of the following best describes your occupation?"
+    languages_worked_with: "Which languages are you proficient in?"
+    salary_usd: "Including bonus, what is your annual compensation in USD?"
