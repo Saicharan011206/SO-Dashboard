@@ -19,3 +19,8 @@ The Stack Overflow Annual Survey is the most comprehensive data source on develo
 1. Clone the repo.
 2. Place raw CSVs in 'data/raw'.
 3. 'pip install -r requirements.txt'
+## Data Pipeline:
+**Phase 1:Data Engineering**<br>
+1.Ingestion:Automated mapping for 14 years of data.
+2.Cleaning:A "trust score" system is implemented to filter out meaningful and more complete data rows(eliminates troll responses,confused responses).
+3.Storage:5GB+ of raw CSV files coverted into filtered and cleaned parquet files for easy analytics.

@@ -213,3 +213,18 @@ data/processed/*.parquet
 *.db
 data/raw/*.txt
 data/raw/*.yaml
+# Environments
+venv/
+.env
+
+# Data - Keep the folders but ignore the files
+data/raw/*
+data/processed/*
+data/database/*
+
+# Except keep the .gitkeep files so the folder structure exists for others
+!data/**/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
