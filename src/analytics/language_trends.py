@@ -1,15 +1,17 @@
 import duckdb
 import pandas as pd
-import os
 
 def compare_languages(lang1, lang2):
-    con = duckdb.connect('data/database/stackoverflow.db')
+    db_path = 'data/database/stackoverflow.db'
+    con = duckdb.connect(db_path)
     
-    # We use a f-string or parameter binding for the 'IN' clause
-    query = f"""
+    query = """
     WITH expanded AS (
-        SELECT year, unnest(string_split(languages_worked_with, ';')) AS language
+        SELECT 
+            year, 
+            unnest(string_split(languages_worked_with, ';')) AS language
         FROM survey_data
+        WHERE languages_worked_with IS NOT NULL
     ),
     yearly_counts AS (
         SELECT year, language, COUNT(*) AS mentions
@@ -27,21 +29,24 @@ def compare_languages(lang1, lang2):
         ROUND((y.mentions * 100.0) / t.total_mentions, 2) AS market_share
     FROM yearly_counts y
     JOIN totals t ON y.year = t.year
-    WHERE y.language IN ('{lang1}', '{lang2}')
+    WHERE y.language IN (?, ?)
     ORDER BY y.year ASC;
     """
     
-    df = con.execute(query).df()
+    df = con.execute(query, [lang1, lang2]).df()
     con.close()
     
-    # Pivot for a clean comparison view
+    if df.empty:
+        return "No data found."
+
     comparison = df.pivot(index='year', columns='language', values='market_share')
+    comparison = comparison.fillna(0.0)
+    
     return comparison
 
 if __name__ == "__main__":
-    # Example: Comparing C++ and Rust
-    l1 = input("Enter first language (e.g., C++): ")
-    l2 = input("Enter second language (e.g., Rust): ")
+    first = input("Enter first language: ").strip()
+    second = input("Enter second language: ").strip()
     
-    print(f"\nComparing {l1} vs {l2} Market Share (%):")
-    print(compare_languages(l1, l2))
+    results = compare_languages(first, second)
+    print(results)

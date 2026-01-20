@@ -76,7 +76,7 @@ mappings:
     ed_level: "FormalEducation"
     dev_type: "DevType"
     languages_worked_with: "LanguageWorkedWith"
-    salary_usd: "ConvertedComp"
+    salary_usd: "ConvertedSalary"
 
   2017:
     country: "Country"
